@@ -36,6 +36,8 @@ TODO
 * call from markdown-mode.
 * parse related yml and fill up metadata.
 * create new article.
+* upload image
+* set summary image
 
 
 AllAbout HTML
