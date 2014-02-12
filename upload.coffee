@@ -18,12 +18,16 @@ conf.content   = if sys.args < 3 then '' else extractBody(fs.open(sys.args[2], '
 page.open 'https://gmtool.allabout.co.jp/g_login/index', (status) ->
   page.render('aa1.png') if conf.debug
   page.evaluate((conf) ->
-    document.querySelector('input[name=guideid]').value = conf.guideid
-    document.querySelector('input[name=passwd]').value = conf.passwd
-    document.querySelector('form').submit()
+    unless document.querySelector('input[name=guideid]')
+      console.log "maintenance"
+    else
+      document.querySelector('input[name=guideid]').value = conf.guideid
+      document.querySelector('input[name=passwd]').value = conf.passwd
+      document.querySelector('form').submit()
   , conf)
 
   window.setTimeout( -> # ガイドテーマを選択, 移動
+    phantom.exit() if page.url.match(/maintenance/)
     page.render('aa2.png') if conf.debug
     page.evaluate((conf) ->
       document.querySelector('#guidesiteid').value = conf.guidesiteid
