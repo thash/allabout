@@ -1,10 +1,11 @@
 {
     "titleShort": "Bundlerの使い方",
-    "title": "Bundlerの使い方",
+    "title": "Bundlerの使い方・Gemfileの書き方",
     "abstract": "プロジェクト単位でRubyGemsを管理するBundlerの使い方を紹介します。",
     "keywords": [ "ruby",
                   "bundler",
                   "bundle",
+                  "Gemfile",
                   "gem",
                   "パッケージ管理" ]
 }
