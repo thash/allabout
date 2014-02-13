@@ -8,7 +8,7 @@ Requirements
 Usage
 ================================================================================
 
-1. Fix up conf.json.
+(1). Fix up conf.json.
 
 ```
 $ cat conf.json
@@ -19,9 +19,9 @@ $ cat conf.json
  }
 ```
 
-2. Write an article.
+(2). Write an article.
 
-3. Execute.
+(3). Execute.
 
 Pass article id and html as arguments.
 
@@ -29,13 +29,31 @@ Pass article id and html as arguments.
 $ phantomjs upload.coffee 439246 articles/aa003_rubygems.html
 ```
 
+or, create new article.
+
+```
+$ phantomjs upload.coffee new articles/aa003_rubygems.json
+```
+
+JSON-formated meta information comes out something like this:
+
+```
+{
+    "titleShort" : "Bundlerの使い方",
+    "title" : "Bundlerの使い方",
+    "abstract" : "プロジェクト単位でRubyGemsを管理するBundlerの使い方を紹介します。",
+    "keywords" : [ "ruby",
+                   "bundler",
+                   "bundle",
+                   "gem",
+                   "パッケージ管理" ]
+}
+```
+
 
 TODO
 ================================================================================
 
-* call from markdown-mode.
-* parse related yml and fill up metadata.
-* create new article.
 * upload image
 * set summary image
 
