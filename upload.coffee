@@ -12,6 +12,12 @@ f = fs.open('./conf.json', 'r')
 conf = JSON.parse(f.read())
 conf.debug     = false
 
+fillMeta = (meta) ->
+  document.querySelector('input[name=txt_TitleShort]').value = meta.titleShort
+  document.querySelector('input[name=txt_Title]').value = meta.title
+  document.querySelector('textarea[name=txt_MetaDescription]').value = meta.abstract
+  document.querySelector('textarea[name=txt_MetaKeywords]').value = meta.keywords
+
 
 #------- update --------#
 #-----------------------#
@@ -35,11 +41,14 @@ updateArticle = (page) ->
     , conf)
     page.onLoadFinished = -> # 記事編集画面
       page.render('aa5.png') if conf.debug
-      page.evaluate((conf) ->
-        if conf.content.length > 0
-          document.getElementsByTagName('textarea')[2].value = conf.content
+      page.evaluate (conf, func) ->
+        if conf.meta?
+          console.log JSON.stringify(conf.meta, null, "    ")
+          func(conf.meta)
+        if conf.content? && conf.content.length > 0
+          document.querySelector('textarea[name=txt_Article]').value = conf.content
         document.form.submit()
-      , conf)
+      , conf, fillMeta
       page.onLoadFinished = -> # 記事を保存しました
         page.render('aa6.png') if conf.debug
         page.evaluate ->
@@ -53,23 +62,18 @@ updateArticle = (page) ->
 #------- create --------#
 #-----------------------#
 createArticle = (page) ->
-  console.log '-------------------'
-  console.log JSON.stringify(conf.meta)
-  console.log '-------------------'
   page.onLoadFinished = -> # 記事一覧画面
     page.render('aa4.png') if conf.debug
     page.evaluate ->
       document.getElementsByName('newcontent')[0].click()
     page.onLoadFinished = -> # 記事新規作成画面
       page.render('aa5.png') if conf.debug
-      page.evaluate (conf) ->
-        document.querySelector('input[name=txt_TitleShort]').value = conf.meta.titleShort
-        document.querySelector('input[name=txt_Title]').value = conf.meta.title
-        document.querySelector('textarea[name=txt_MetaDescription]').value = conf.meta.abstract
-        document.querySelector('textarea[name=txt_MetaKeywords]').value = conf.meta.keywords
+      page.evaluate (conf, func) ->
+        console.log JSON.stringify(conf.meta, null, "    ")
+        func(conf.meta)
         document.querySelector('textarea[name=txt_Article]').value = '--' # tmp article
         document.form.submit()
-      , conf
+      , conf, fillMeta
       page.onLoadFinished = -> # 記事を保存しました
         page.render('aa6.png') if conf.debug
         page.evaluate -> # TODO: same code. make it DRY.
@@ -132,7 +136,7 @@ page.open 'https://gmtool.allabout.co.jp/g_login/index', (status) ->
 
       switch sys.args[1]
         # $ phantomjs upload.coffee new metadata.json
-        when "new"
+        when "new","create"
           conf.meta = JSON.parse(fs.open(sys.args[2], 'r').read())
           createArticle(page)
 
@@ -140,8 +144,9 @@ page.open 'https://gmtool.allabout.co.jp/g_login/index', (status) ->
         when "update"
           conf.articleId = sys.args[2]
           conf.content   = extractBody(fs.open(sys.args[3], 'r').read())
-          # conf.meta = JSON.parse(fs.open(sys.args[2], 'r').read())
-          #  ... replace filename (html -> json) and load it if any.
+          jsonFile = sys.args[3].replace(/(.*)\.html/, "$1.json")
+          if fs.isFile(jsonFile) && fs.isReadable(jsonFile)
+            conf.meta = JSON.parse(fs.open(jsonFile, 'r').read())
           updateArticle(page)
 
         # $ phantomjs upload.coffee list
