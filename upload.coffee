@@ -12,23 +12,6 @@ f = fs.open('./conf.json', 'r')
 conf = JSON.parse(f.read())
 conf.debug     = false
 
-switch sys.args[1]
-  # $ phantomjs upload.coffee new metadata.json
-  when "new"
-    conf.createArticle = true
-    conf.meta = JSON.parse(fs.open(sys.args[2], 'r').read())
-  # $ phantomjs upload.coffee update <articleId> article.html
-  when "update"
-    conf.articleId = sys.args[2]
-    conf.content   = extractBody(fs.open(sys.args[3], 'r').read())
-    # conf.meta = JSON.parse(fs.open(sys.args[2], 'r').read())
-    #  ... replace filename (html -> json) and load it if any.
-  else
-    console.log 'usage: $ phantomjs upload.coffee <cmd> args...'
-    console.log '       e.g. $ phantomjs upload.coffee new metadata.json'
-    console.log '            $ phantomjs upload.coffee update <articleId> article.html'
-    phantom.exit()
-
 
 #------- update --------#
 #-----------------------#
@@ -97,6 +80,22 @@ createArticle = (page) ->
         phantom.exit()
 
 
+#-------- list ---------#
+#-----------------------#
+listArticles = (page) ->
+  page.onLoadFinished = -> # 記事一覧画面
+    page.evaluate ->
+      listTable = document.getElementsByClassName('table2')[1]
+      for row in listTable.getElementsByTagName('tr')
+        continue if row.getElementsByTagName('td')[0].innerHTML.match(/No/)
+        articleId  = row.getElementsByTagName('td')[1].children[0].innerText
+        article    = row.getElementsByTagName('td')[2].children[0]
+        title      = article.text
+        previewURL = article.href
+        console.log "#{articleId}: #{title} -- #{previewURL}"
+    phantom.exit()
+
+
 # TODO: make click function DRY
 page.open 'https://gmtool.allabout.co.jp/g_login/index', (status) ->
   page.render('aa1.png') if conf.debug
@@ -130,5 +129,28 @@ page.open 'https://gmtool.allabout.co.jp/g_login/index', (status) ->
             el.dispatchEvent evObj
         )(elem, 'click')
 
-      if conf.createArticle then createArticle(page) else updateArticle(page)
+
+      switch sys.args[1]
+        # $ phantomjs upload.coffee new metadata.json
+        when "new"
+          conf.meta = JSON.parse(fs.open(sys.args[2], 'r').read())
+          createArticle(page)
+
+        # $ phantomjs upload.coffee update <articleId> article.html
+        when "update"
+          conf.articleId = sys.args[2]
+          conf.content   = extractBody(fs.open(sys.args[3], 'r').read())
+          # conf.meta = JSON.parse(fs.open(sys.args[2], 'r').read())
+          #  ... replace filename (html -> json) and load it if any.
+          updateArticle(page)
+
+        # $ phantomjs upload.coffee list
+        when "list"
+          listArticles(page)
+
+        else
+          console.log 'usage: $ phantomjs upload.coffee <cmd> args...'
+          console.log '       e.g. $ phantomjs upload.coffee new metadata.json'
+          console.log '            $ phantomjs upload.coffee update <articleId> article.html'
+          phantom.exit()
 
