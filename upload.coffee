@@ -12,6 +12,15 @@ f = fs.open('./conf.json', 'r')
 conf = JSON.parse(f.read())
 conf.debug     = false
 
+
+clickFunc = (elem) ->
+  if elem.fireEvent
+    elem.fireEvent 'on' + 'click'
+  else
+    evObj = document.createEvent('Events')
+    evObj.initEvent 'click', true, false
+    elem.dispatchEvent evObj
+
 fillMeta = (meta) ->
   document.querySelector('input[name=txt_TitleShort]').value = meta.titleShort
   document.querySelector('input[name=txt_Title]').value = meta.title
@@ -24,21 +33,14 @@ fillMeta = (meta) ->
 updateArticle = (page) ->
   page.onLoadFinished = -> # 記事一覧画面
     page.render('aa4.png') if conf.debug
-    page.evaluate((conf) ->
+    page.evaluate (conf, click) ->
       elems = document.getElementsByTagName('a')
       for elem in elems
         if elem.innerHTML == conf.articleId
           targ = elem
           break
-      ((el, etype) ->
-        if el.fireEvent
-          el.fireEvent 'on' + etype
-        else
-          evObj = document.createEvent('Events')
-          evObj.initEvent etype, true, false
-          el.dispatchEvent evObj
-      )(targ, 'click')
-    , conf)
+      click(targ, 'click')
+    , conf, clickFunc
     page.onLoadFinished = -> # 記事編集画面
       page.render('aa5.png') if conf.debug
       page.evaluate (conf, func) ->
@@ -100,7 +102,6 @@ listArticles = (page) ->
     phantom.exit()
 
 
-# TODO: make click function DRY
 page.open 'https://gmtool.allabout.co.jp/g_login/index', (status) ->
   page.render('aa1.png') if conf.debug
   page.evaluate((conf) ->
@@ -122,17 +123,9 @@ page.open 'https://gmtool.allabout.co.jp/g_login/index', (status) ->
 
     page.onLoadFinished = -> # メニューから「コンテンツ管理」を選択
       page.render('aa3.png') if conf.debug
-      page.evaluate ->
-        elem = document.getElementsByClassName('menu_index')[0].children[0].childNodes[0]
-        ((el, etype) ->
-          if el.fireEvent
-            el.fireEvent 'on' + etype
-          else
-            evObj = document.createEvent('Events')
-            evObj.initEvent etype, true, false
-            el.dispatchEvent evObj
-        )(elem, 'click')
-
+      page.evaluate (click) ->
+        click(document.getElementsByClassName('menu_index')[0].children[0].childNodes[0])
+      , clickFunc
 
       switch sys.args[1]
         # $ phantomjs upload.coffee new metadata.json
