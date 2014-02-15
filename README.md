@@ -8,8 +8,6 @@ Requirements
 Usage
 ================================================================================
 
-(1). Fix up conf.json.
-
 ```
 $ cat conf.json
 {
@@ -19,20 +17,10 @@ $ cat conf.json
  }
 ```
 
-(2). Write an article.
-
-(3). Execute.
-
-Pass article id and html as arguments.
+### How to create new article
 
 ```
-$ phantomjs upload.coffee 439246 articles/aa003_rubygems.html
-```
-
-or, create new article.
-
-```
-$ phantomjs upload.coffee new articles/aa003_rubygems.json
+$ phantomjs upload.coffee create articles/aa003_rubygems.json
 ```
 
 JSON-formated meta information comes out something like this:
@@ -49,6 +37,17 @@ JSON-formated meta information comes out something like this:
                    "パッケージ管理" ]
 }
 ```
+
+
+### How to update existing article
+
+Pass article id and html as arguments.
+
+```
+$ phantomjs upload.coffee update 439246 articles/aa003_rubygems.html
+```
+
+Meta information will be also updated if `articles/aa003_rubygems.json` exist.
 
 
 TODO
