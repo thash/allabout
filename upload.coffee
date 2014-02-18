@@ -6,12 +6,8 @@ page = require('webpage').create()
 page.onConsoleMessage = (msg) -> console.log msg
 page.settings.userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:26.0) Gecko/20100101 Firefox/26.0'
 
-extractBody = (html) -> html.match(/<body[^>]*>([\w|\W]*)<\/body>/im)[1]
-
-f = fs.open('./conf.json', 'r')
-conf = JSON.parse(f.read())
-conf.debug     = false
-
+conf = JSON.parse(fs.open('./conf.json', 'r').read())
+conf.debug = false
 
 clickFunc = (elem) ->
   if elem.fireEvent
@@ -27,6 +23,7 @@ fillMeta = (meta) ->
   document.querySelector('textarea[name=txt_MetaDescription]').value = meta.abstract
   document.querySelector('textarea[name=txt_MetaKeywords]').value = meta.keywords
 
+extractBody = (html) -> html.match(/<body[^>]*>([\w|\W]*)<\/body>/im)[1]
 
 #------- update --------#
 #-----------------------#
@@ -86,6 +83,25 @@ createArticle = (page) ->
         phantom.exit()
 
 
+#-------- down ---------#
+#-----------------------#
+downloadArticle = (page) ->
+  page.onLoadFinished = -> # 記事一覧画面
+    page.evaluate (conf, click) ->
+      elems = document.getElementsByTagName('a')
+      for elem in elems
+        if elem.innerHTML == conf.articleId
+          targ = elem
+          break
+      click(targ, 'click')
+    , conf, clickFunc
+    page.onLoadFinished = -> # 記事編集画面
+      page.onConsoleMessage = (msg) -> fs.write("#{conf.articleId}.html", msg, 'w')
+      page.evaluate ->
+        console.log document.querySelector('textarea[name=txt_Article]').value
+      phantom.exit()
+
+
 #-------- list ---------#
 #-----------------------#
 listArticles = (page) ->
@@ -141,6 +157,10 @@ page.open 'https://gmtool.allabout.co.jp/g_login/index', (status) ->
           if fs.isFile(jsonFile) && fs.isReadable(jsonFile)
             conf.meta = JSON.parse(fs.open(jsonFile, 'r').read())
           updateArticle(page)
+
+        when "down"
+          conf.articleId = sys.args[2]
+          downloadArticle(page)
 
         # $ phantomjs upload.coffee list
         when "list"

@@ -81,6 +81,14 @@ or for single file,
 <div style="page-break-after: always"><span style="display: none">&nbsp;</span></div>
 ```
 
+### Amazon Item
+
+Embed div with name and class. Here name value should be like `Item:0003:<ASIN ID>`, then amazon item will be embedded automatically.
+
+```
+<div name="Item:0003:4873113946" class="ItemCassette">プログラミング言語 Ruby</div>
+```
+
 
 Memo
 =========================
