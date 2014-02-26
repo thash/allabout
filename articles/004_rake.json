@@ -1,0 +1,11 @@
+{
+    "titleShort": "Rakeの使い方",
+    "title": "RubyのMake、Rakeの使い方",
+    "abstract": "Rakeは、Unixプログラミングで古くから使われてきたmakeのように使えるツールです。Makefileの代わりとなる\"Rakefile\"にRubyでタスクを記述します。",
+    "keywords": [ "ruby",
+                  "rake",
+                  "task",
+                  "make",
+                  "Rakefile",
+                  "タスク" ]
+}
