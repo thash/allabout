@@ -1,0 +1,14 @@
+{
+    "titleShort": "Ruby on Railsの紹介",
+    "title": "Ruby on Railsの紹介 -- RailsのインストールとHello World",
+    "abstract": "Ruby人気上昇のきっかけのひとつであり、他言語にも影響を及ぼしたウェブアプリケーションフレームワーク「Ruby on Rails」を紹介します。まず初Rails記事の今回は、Railsをインストールして、最初の画面を起動するところまで扱います。",
+    "keywords": [ "ruby",
+                  "rails",
+                  "install",
+                  "インストール",
+                  "チュートリアル",
+                  "ruby on rails",
+                  "レールズ",
+                  "ルビー" ]
+}
+
