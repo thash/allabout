@@ -1,0 +1,13 @@
+{
+    "titleShort": "RailsでTwitterを作る(1)",
+    "title": "RailsでTwitterクローンを作る(1) -- Scaffoldでひな形を生成",
+    "abstract": "何回かに分けて、Railsで少し実践的なアプリケーションを制作する流れを説明していきます。今回はRailsのScaffold機能を使い、アプリケーションのひな形を生成します。",
+    "keywords": [ "ruby",
+                  "rails",
+                  "scaffold",
+                  "rails generate",
+                  "ruby on rails",
+                  "レールズ",
+                  "ルビー" ]
+}
+
