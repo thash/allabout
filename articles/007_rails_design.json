@@ -1,0 +1,15 @@
+{
+    "titleShort": "RailsでTwitterを作る(2)",
+    "title": "RailsでTwitterクローンを作る(2) -- 画面レイアウトを整える",
+    "abstract": "前回作成したTwitterクローンの画面レイアウトを見直し、画面遷移なしで投稿できるようにする。また、本格的に見えるデザインを手軽に適用する方法も紹介する。",
+    "keywords": [ "ruby",
+                  "rails",
+                  "ruby on rails",
+                  "design",
+                  "デザイン",
+                  "CSS",
+                  "レールズ",
+                  "ルビー" ]
+}
+
+
