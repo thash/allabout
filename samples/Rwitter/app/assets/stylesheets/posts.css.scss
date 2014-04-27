@@ -9,12 +9,32 @@
     border-radius: $size / $size;
 }
 
-.main {
-    padding: 50px 100px;
-    margin: 50px 100px;
+@mixin box() {
+    @include radius(5px);
     background: #FFFFFF;
     opacity: 0.9;
     color: #969696;
+}
+
+$margin-S: 10px;
+$margin-M: 20px;
+$margin-L: 40px;
+
+#sub {
+    @include box();
+    min-width: 20%;
+    float: left;
+    padding: 20px;
+    margin-right: $margin-M;
+    margin-bottom: $margin-M;
+}
+
+
+#main {
+    @include box();
+    width: 60%;
+    float: left;
+    padding: 20px;
 
     @include radius(5px);
 
@@ -24,20 +44,6 @@
             @include radius(4px);
         }
     }
-    .actions {
-        input {
-            &:hover {
-                cursor: pointer;
-                background-color: #969696;
-            }
-            border: 1px solid #CCC;
-            padding: 5px 10px;
-            color: #FFF;
-            background-color: #3b982b;
-            @include radius(4px);
-        }
-    }
-
     table {
         margin-top: 20px;
         tr {
@@ -62,4 +68,32 @@
             background-color: #3b982b;
         }
     }
+}
+
+.actions {
+    input {
+        &:hover {
+            cursor: pointer;
+            background-color: #969696;
+        }
+        border: 1px solid #CCC;
+        padding: 5px 10px;
+        color: #FFF;
+        background-color: #3b982b;
+        @include radius(4px);
+    }
+}
+
+form {
+    label {
+        text-align: right;
+        padding-right: 15px;
+        width: 50px;
+    }
+    label,input {
+        display: block;
+        float: left;
+        margin-bottom: 10px;
+    }
+    br { clear: left; }
 }

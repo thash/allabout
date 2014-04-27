@@ -1,5 +1,6 @@
-<div class="main">
-<%= render 'form' %>
+<% if logged_in? %>
+  <%= render 'form' %>
+<% end %>
 
 <table>
   <tbody>
@@ -12,4 +13,3 @@
     <% end %>
   </tbody>
 </table>
-</div>
