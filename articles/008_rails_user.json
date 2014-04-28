@@ -1,0 +1,19 @@
+{
+    "titleShort": "RailsでTwitterを作る(3)",
+    "title": "RailsでTwitterクローンを作る(3) -- 投稿とユーザを紐付けする",
+    "abstract": "モデル同士の関連(association)を定義する方法、アプリケーションにユーザ認証を追加する方法、マイグレーション(migration)機能でDBスキーマに変更を加える方法などを学びます",
+    "keywords": [ "ruby",
+                  "rails",
+                  "ruby on rails",
+                  "model",
+                  "sorcery",
+                  "認証",
+                  "ログイン",
+                  "migration",
+                  "マイグレーション",
+                  "ActiveRecord",
+                  "レールズ",
+                  "ルビー" ]
+}
+
+
