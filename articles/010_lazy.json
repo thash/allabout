@@ -1,0 +1,12 @@
+{
+    "titleShort": "Enumerator::Lazyで遅延リストを扱う",
+    "title": "Ruby2.0の新機能、Enumerator::Lazyで遅延リストを扱う",
+    "abstract": "Ruby2.0から導入されたEnumerator::Lazyを使って、無限、あるいは巨大なストリームデータを扱う方法を紹介します。",
+    "keywords": [ "ruby",
+                  "遅延評価",
+                  "遅延処理",
+                  "lazy",
+                  "Ruby2.0",
+                  "新機能",
+                  "ルビー" ]
+}
