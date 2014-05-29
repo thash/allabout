@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title
+      | Rwitter
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body
+    #sub
+      - if logged_in?
+        = image_tag current_user.icon, width: 50, height: 50
+        = current_user.name
+        |  でログイン中 
+        br
+        br
+        = link_to 'ログアウト', signout_users_path, method: :delete
+      - else
+        #login_form
+          = form_tag signin_users_path, class: 'user_form' do
+            label[for="email"]
+              | email:
+            = text_field_tag :email
+            br
+            label[for="password"]
+              | password:
+            = password_field_tag :password
+            br
+            .actions
+              = submit_tag 'ログイン'
+          br
+          div[style="clear: both;"]
+          |  もしくは 
+          = link_to '新規登録', new_user_path
+    #main
+      = yield
