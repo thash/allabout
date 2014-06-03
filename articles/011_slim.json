@@ -1,0 +1,14 @@
+{
+    "titleShort": "Slimテンプレートエンジンの使い方",
+    "title": "Slimテンプレートエンジンを使ってHTMLを出力する",
+    "abstract": "HTMLテンプレートエンジンであるSlimを紹介します。ERBやHamlとの機能や文法を比較し、RailsアプリにSlimテンプレートを使用する方法を解説します。",
+    "keywords": [ "ruby",
+                  "Slim",
+                  "ERB",
+                  "Haml",
+                  "テンプレートエンジン",
+                  "HTML",
+                  "Rails",
+                  "view",
+                  "ルビー" ]
+}

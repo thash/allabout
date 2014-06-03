@@ -1,0 +1,19 @@
+- if logged_in?
+  = render 'form'
+table
+  tbody
+    - @posts.each do |post|
+      tr
+        td.icon
+          = image_tag post.user.icon, width: 20, height: 20
+        td.name
+          = post.user.name
+        td.body
+          | 「
+          = post.body
+          | 」
+        td.created_at
+          = link_to post.created_at, post
+        - if logged_in? && current_user == post.user
+          td.destroy
+            = link_to '×', post, method: :delete, data: { confirm: 'Are you sure?' }

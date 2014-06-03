@@ -1,0 +1,22 @@
+= link_to '投稿一覧へ', posts_path
+br
+br
+= form_for @user, class: 'user_form' do |f|
+  label[for="name"]
+    | name:
+  = f.text_field :name
+  br
+  label[for="email"]
+    | email:
+  = f.text_field :email
+  br
+  label[for="password"]
+    | password:
+  = f.password_field :password
+  br
+  label[for="icon"]
+    | icon:
+  = f.text_field :icon
+  br
+  .actions
+    = f.submit 'ユーザ登録'
