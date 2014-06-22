@@ -1,0 +1,15 @@
+{
+    "titleShort": "Ruby2.0の新機能、Module#prependの紹介",
+    "title": "Ruby2.0の新機能、Module#prependの紹介",
+    "abstract": "Module#prependが実現するMix-in方式をincludeと比較しながら紹介し、応用編としてRailsのalias_method_chain処理をprependに書き換えます",
+    "keywords": [ "ruby",
+                  "prepend",
+                  "Module",
+                  "alias_method_chain",
+                  "エイリアス",
+                  "モジュール",
+                  "継承",
+                  "Mix-in",
+                  "クラス",
+                  "ルビー" ]
+}
