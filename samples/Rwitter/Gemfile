@@ -45,4 +45,4 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-gem 'pry', group: [:development, :test]
+gem 'pry-rails', group: [:development, :test]

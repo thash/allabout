@@ -74,10 +74,12 @@ GEM
       multi_xml (~> 0.5)
       rack (~> 1.2)
     polyglot (0.3.4)
-    pry (0.9.12.6)
-      coderay (~> 1.0)
-      method_source (~> 0.8)
+    pry (0.10.0)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -147,7 +149,7 @@ DEPENDENCIES
   html2slim
   jbuilder (~> 1.2)
   jquery-rails
-  pry
+  pry-rails
   rails (= 4.0.3)
   sass-rails (~> 4.0.0)
   sdoc

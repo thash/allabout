@@ -1,0 +1,12 @@
+{
+    "titleShort": "pryを使ってRailsをデバッグする",
+    "title": "pryを使ってRailsアプリケーションをデバッグする",
+    "abstract": "高機能なデバッガーであるpryの使い方を紹介し、pryを使ったRailsアプリケーションのデバッグ方法も解説します。",
+    "keywords": [ "ruby",
+                  "pry",
+                  "debugger",
+                  "開発環境",
+                  "Rails",
+                  "レールズ",
+                  "ルビー" ]
+}
