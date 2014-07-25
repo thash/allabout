@@ -1,0 +1,15 @@
+{
+    "titleShort": "Ruby2.1の変更点と新機能の紹介",
+    "title": "Ruby2.1の変更点と新機能の紹介",
+    "abstract": "2013年12月にリリースされたRuby2.1は2.0と何が変わったのか、どんな機能があるのかを紹介します",
+    "keywords": [ "ruby",
+                  "Ruby2.1",
+                  "新機能",
+                  "refinement",
+                  "refine",
+                  "using",
+                  "cause",
+                  "例外",
+                  "変更点",
+                  "ルビー" ]
+}
