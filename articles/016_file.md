@@ -54,6 +54,7 @@ openしたファイルは、必ずcloseする必要があります。
 
 [次のページ](/gm/gc/445639/2/)ではディレクトリを扱う方法や、その他のよく利用するメソッドなどを紹介します。
 
+<div style="page-break-after: always"><span style="display: none">&nbsp;</span></div>
 
 ### ディレクトリ
 
