@@ -1,0 +1,12 @@
+{
+    "titleShort": "Rubyの正規表現の基礎",
+    "title": "Rubyの正規表現の基礎",
+    "abstract": "Rubyにおける正規表現の基本的な文法・使い方を紹介します",
+    "keywords": [ "ruby",
+                  "正規表現",
+                  "regexp",
+                  "regular expression",
+                  "文字列",
+                  "置換",
+                  "ルビー" ]
+}
