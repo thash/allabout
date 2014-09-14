@@ -1,0 +1,16 @@
+{
+    "titleShort": "Rubyによるネットワーク通信の基礎",
+    "title": "Rubyによるネットワーク通信の基礎",
+    "abstract": "Rubyを使ってソケットを介したネットワーキング処理を行う方法を紹介します",
+    "keywords": [ "ruby",
+                  "ネットワーク",
+                  "network",
+                  "ソケット",
+                  "socket",
+                  "サーバ",
+                  "server",
+                  "tcp/ip",
+                  "TCPServer",
+                  "IO",
+                  "ルビー" ]
+}
