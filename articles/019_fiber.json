@@ -1,0 +1,20 @@
+{
+    "titleShort": "Fiberによる協調的な並行プログラミング",
+    "title": "Fiberによる協調的な並行プログラミング",
+    "abstract": "ノンプリエンプティブな軽量スレッドであるFiberを紹介し、その基本的な使い方、およびFiber#transferを用いた制限のないコンテキスト切り替えを解説します。",
+    "keywords": [ "ruby",
+                  "Fiber",
+                  "yield",
+                  "プリエンプティブ",
+                  "ノンプリエンプティブ",
+                  "preemptive",
+                  "non-preemptive",
+                  "ファイバ",
+                  "ファイバー",
+                  "コルーチン",
+                  "coroutine",
+                  "セミコルーチン",
+                  "semicoroutine",
+                  "resume",
+                  "ルビー" ]
+}
