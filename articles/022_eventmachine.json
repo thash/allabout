@@ -1,0 +1,13 @@
+{
+    "titleShort": "EventMachineの使い方",
+    "title": "イベント駆動I/OライブラリEventMachineの使い方",
+    "abstract": "イベント駆動I/OライブラリであるEventMachineの使い方を紹介します。",
+    "keywords": [ "ruby",
+                  "IO",
+                  "eventmachine",
+                  "Thread",
+                  "イベント駆動",
+                  "イベントドリブン",
+                  "ルビー" ]
+}
+
