@@ -1,0 +1,16 @@
+{
+    "titleShort": "Rubyの条件分岐・制御構文の使い方",
+    "title": "Rubyの条件分岐・制御構文の使い方",
+    "abstract": "Rubyのif、unless、caseなど条件分岐構文の紹介と、いくつかのパターンの使い方を解説します。",
+    "keywords": [
+        "ruby",
+        "ルビー",
+        "条件分岐",
+        "制御構文",
+        "if",
+        "elsif",
+        "else",
+        "case",
+        "unless"
+    ]
+}
