@@ -60,8 +60,7 @@ def content(file)
                export_html(file)
                "#{File.dirname(file)}/#{File.basename(file, '.md')}.html"
              end
-  doc = Nokogiri::HTML.parse(open(htmlfile).read)
-  doc.search('body')[0].inner_html
+  open(htmlfile).read.gsub(/^.*<body>(.*)<\/body>.*$/m) { $1 }
 end
 
 case ARGV[0].to_sym
