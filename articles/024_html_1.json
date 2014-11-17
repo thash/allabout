@@ -1,0 +1,14 @@
+{
+    "titleShort": "RubyによるWebスクレイピング(1)",
+    "title": "RubyによるWebスクレイピング(1): NokogiriでHTMLをパースする",
+    "abstract": "Rubyを使ってWeb上の情報を取得して取り扱う方法を紹介します。第一回ではNokogiriというRuby製ライブラリでHTMLをパースするところまでを紹介します。",
+    "keywords": [
+        "ruby",
+        "ルビー",
+        "スクレイピング",
+        "scraping",
+        "crawler",
+        "クローラ",
+        "Nokogiri"
+    ]
+}
