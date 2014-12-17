@@ -1,0 +1,14 @@
+{
+    "titleShort": "RubyによるWebスクレイピング(2): Capybaraで対話的ブラウジング",
+    "title": "RubyによるWebスクレイピング(2): Capybaraで対話的ブラウジング",
+    "abstract": "Capybaraを利用してウェブを操作・情報を取得する方法を紹介します。",
+    "keywords": [
+        "ruby",
+        "ルビー",
+        "スクレイピング",
+        "scraping",
+        "Capybara",
+        "Webkit",
+        "ブラウザ"
+    ]
+}
