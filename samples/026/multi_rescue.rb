@@ -1,0 +1,9 @@
+begin
+  do_something
+rescue LoadError
+  # ...
+rescue IOError
+  # ...
+rescue StandardError
+  # ...
+end

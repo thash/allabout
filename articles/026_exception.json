@@ -1,0 +1,13 @@
+{
+    "titleShort": "Rubyの例外処理の基本",
+    "title": "Rubyの例外処理の基本",
+    "abstract": "Rubyがプログラム中で発生するエラーを扱う方法、例外処理の基本を解説します",
+    "keywords": [
+        "ruby",
+        "例外",
+        "Exception",
+        "エラー",
+        "Error",
+        "ルビー"
+    ]
+}
