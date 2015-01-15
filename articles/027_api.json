@@ -1,0 +1,19 @@
+{
+    "titleShort": "APIからJSONデータを取得する",
+    "title": "APIからJSONデータを取得する",
+    "abstract": "公開されているAPIからJSON形式でデータを取得し、Rubyオブジェクトに変換する方法について解説します。JSONデータを取り扱う際に便利なjqやHashieといったツールの紹介も行います。",
+    "keywords": [
+        "ruby",
+        "api",
+        "jq",
+        "curl",
+        "PubMed",
+        "文献検索",
+        "論文",
+        "Network",
+        "JSON",
+        "hashie",
+        "mash",
+        "ルビー"
+    ]
+}
