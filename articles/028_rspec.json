@@ -1,0 +1,13 @@
+{
+    "titleShort": "RSpecによるRubyプログラムの単体テスト",
+    "title": "RSpecによるRubyプログラムの単体テスト",
+    "abstract": "RubyのテストライブラリであるRSpecを用いてコードのテストを行う方法を解説します",
+    "keywords": [
+        "ruby",
+        "rspec",
+        "単体テスト",
+        "UnitTest",
+        "ユニットテスト",
+        "ルビー"
+    ]
+}
