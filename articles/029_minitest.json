@@ -1,0 +1,18 @@
+{
+    "titleShort": "minitestを使ったコードのテスト方法とTDD(テスト駆動開発)",
+    "title": "minitestを使ったコードのテスト方法とTDD(テスト駆動開発)",
+    "abstract": "前回のRSpecに続き、minitestを使ったコードのテスト方法を解説します。また、TDD(テスト駆動開発)という開発手法を簡単に紹介します。",
+    "keywords": [
+        "ruby",
+        "rspec",
+        "単体テスト",
+        "テスティングフレームワーク",
+        "UnitTest",
+        "ユニットテスト",
+        "minitest",
+        "Test Drivern Development",
+        "テスト駆動開発",
+        "TDD",
+        "ルビー"
+    ]
+}
