@@ -1,0 +1,17 @@
+{
+    "titleShort": "Rubyにおけるリフレクションプログラミング",
+    "title": "Rubyにおけるリフレクションプログラミング",
+    "abstract": "eval族とbindingを中心としたRubyでの「リフレクションプログラミング」について改めて解説を行います",
+    "keywords": [
+        "ruby",
+        "reflection",
+        "リフレクション",
+        "メタプログラミング",
+        "instance_eval",
+        "eval",
+        "評価",
+        "環境",
+        "binding",
+        "ルビー"
+    ]
+}
