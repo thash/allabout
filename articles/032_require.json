@@ -1,0 +1,14 @@
+{
+    "titleShort": "require, require_relative, load, autoloadの違い",
+    "title": "require, require_relative, load, autoloadの違い",
+    "abstract": "別ファイルのコードを読み込む関数には、requireをはじめいくつかの種類があります。その動作の違いを説明します",
+    "keywords": [
+        "ruby",
+        "require",
+        "require_relative",
+        "違い",
+        "load",
+        "ロード",
+        "ルビー"
+    ]
+}
