@@ -1,0 +1,15 @@
+{
+    "titleShort": "Rubyの特異クラス・特異メソッドについて",
+    "title": "Rubyの特異クラス・特異メソッドについて",
+    "abstract": "特定のオブジェクトに紐づく特殊なクラス「特異クラス」と、特異クラスに定義されるメソッド「特異メソッド」を知ることで、Rubyのオブジェクト指向設計の理解を深めます。",
+    "keywords": [
+        "ruby",
+        "特異クラス",
+        "特異メソッド",
+        "singleton classes",
+        "singleton methods",
+        "Object oriented",
+        "オブジェクト指向",
+        "ルビー"
+    ]
+}
