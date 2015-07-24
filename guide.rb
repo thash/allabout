@@ -46,7 +46,7 @@ end
 
 def preview_url
   return 'no preview button' unless @s.has_field? :preview
-  'https://' + @s.find(:css, 'input[name="preview"]')[:onclick].scan(/\/\/(.*)',/).first.first
+  'https://' + @s.find(:css, 'input[value="PCプレビュー"]')[:onclick].scan(/\/\/(.*)',/).first.first
 end
 
 def export_html(mdfile)
