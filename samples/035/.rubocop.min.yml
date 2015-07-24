@@ -1,0 +1,4 @@
+Style/SpaceAroundOperators:
+  Enabled: false
+Style/BlockDelimiters:
+  Enabled: false
