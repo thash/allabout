@@ -2,6 +2,7 @@
 conf.json
 
 articles/*.html
+articles/*.html.tmp
 articles/_*
 *.png
 \#*

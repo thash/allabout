@@ -49,8 +49,18 @@ def preview_url
   'https://' + @s.find(:css, 'input[value="PCプレビュー"]')[:onclick].scan(/\/\/(.*)',/).first.first
 end
 
+def htmlsub(before_file, after_file)
+  page_break_tag = '<div style="page-break-after: always;"><span style="DISPLAY:none">&nbsp;</span></div>'
+  content = open(before_file).read.gsub(/(<p>)?::allabout-break::(<\/p>)?/, page_break_tag)
+  File.open(after_file, "w+") {|f| f.write(content) }
+end
+
 def export_html(mdfile)
-  `markdown #{mdfile} > #{File.dirname(mdfile)}/#{File.basename(mdfile, '.md')}.html`
+  base = "#{File.dirname(mdfile)}/#{File.basename(mdfile, '.md')}"
+  htmlfile_tmp = "#{base}.html.tmp"
+  htmlfile     = "#{base}.html"
+  `markdown #{mdfile} > #{htmlfile_tmp}`
+  htmlsub(htmlfile_tmp, htmlfile)
 end
 
 def content(file)
