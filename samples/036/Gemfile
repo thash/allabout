@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+
+gem 'pry'
+gem 'oauth2'
+gem 'awesome_print'
+gem 'sinatra', require: false

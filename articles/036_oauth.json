@@ -1,0 +1,18 @@
+{
+    "titleShort": "OAuth 2.0 の認可フローと oauth2 gem を使った Google APIs の利用",
+    "title": "OAuth 2.0 の認可フローと oauth2 gem を使った Google APIs の利用",
+    "abstract": "OAuth 2.0 の認可フローを解説し、実例として、Ruby の oauth2 gem を用いて Google APIs の機能を利用する方法を紹介します。",
+    "keywords": [
+        "ruby",
+        "OAuth",
+        "認可",
+        "Authorization",
+        "Access Token",
+        "アクセストークン",
+        "認証",
+        "OAuth2.0",
+        "Google",
+        "API",
+        "ルビー"
+    ]
+}
