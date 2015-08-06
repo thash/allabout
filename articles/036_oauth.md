@@ -1,3 +1,5 @@
+### OAuth 2.0 の仕組み
+
 OAuth 2.0 は認可 (Authorization) の標準仕様として有志の手により策定されているオープンなプロトコルです。OAuth 2.0 を利用すると、ユーザはサードパーティ制アプリケーションにパスワードなど秘密情報を渡すことなく、限定されたアクセス権を与えることができます。
 
 サードパーティ制アプリケーションで Google, Facebook, Twitter など(プロバイダと呼ばれます)を使ったログイン機能を提供するために使われることもありますが、OAuth 2.0 自体は利用者の本人確認を他のプロバイダに任せており、ユーザを認証済みと信頼してアクセス権を与える仕組みです。認証と認可には次のような違いがあります。
@@ -174,10 +176,7 @@ Ruby で OAuth 2.0 を使う際にデファクトスタンダードとなって�
 
 Google Spreadsheet のデータを Excel 形式で落としてくることができました。
 
-<div class="center200 article_image_box"><img width="200" height="128" class="article_image" alt="xlsx" src="//img2.allabout.co.jp/gm/article/457097/xlsx.png" />
+<div class="center400 article_image_box"><a title="xx" rel="allabout-gallery" class="slide_image" href="//img2.allabout.co.jp/gm/article/b/457097/xxx.png"><img width="400" height="191" class="article_image" alt="xx" src="//img2.allabout.co.jp/gm/article/457097/xxx.png" /></a>
 </div>
-
-
-### 以上
 
 以上で OAuth 2.0 の紹介は終わりです。OAuth 2.0 は広く使われているため便利なライブラリに隠されてしまいがちですが、一度中で何が行われているのかをじっくり追いかけてみると応用が効くようになり、様々なサービスの API で楽しく遊べます。
