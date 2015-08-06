@@ -10,6 +10,9 @@ class Article < Struct.new(:id, :title, :created, :published)
 end
 
 Capybara.javascript_driver = :webkit
+Capybara::Webkit.configure do |config|
+  config.allow_unknown_urls
+end
 @s = Capybara::Session.new(:webkit)
 @s.driver.header 'user-agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:26.0) Gecko/20100101 Firefox/26.0'
 
@@ -45,7 +48,7 @@ def update_meta(meta)
 end
 
 def preview_url
-  return 'no preview button' unless @s.has_field? :preview
+  # return 'no preview button' unless @s.has_field? :preview
   'https://' + @s.find(:css, 'input[value="PCプレビュー"]')[:onclick].scan(/\/\/(.*)',/).first.first
 end
 
